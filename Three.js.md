@@ -1,7 +1,5 @@
 # Three.js!
 
-标签（空格分隔）： 未分类
-
 ---
 
 ## 基础概念
@@ -59,6 +57,59 @@ THREE.PerspectiveCamera(fov, aspect, near, far)
  - fov：视景体竖直方向上的张角
  - aspect：width / height
  - near/far: 照相机到视景体最近、最远的距离
+
+## 几何形状
+
+### 基本几何形状
+
+ -  立方体（CubeGeometry）
+```
+THREE.CubeGeometry(width, height, depth, widthSegments, heightSegments, depthSegments)
+```
+ -  平面（PlaneGeometry）
+```
+THREE.PlaneGeometry(width, height, widthSegments, heightSegments)
+```
+ -  球体（SphereGeometry）
+```
+THREE.SphereGeometry(radius, segmentsWidth, segmentsHeight, phiStart, phiLength, thetaStart, thetaLength)
+```
+ -  圆形（CircleGeometry）
+```
+THREE.CircleGeometry(radius, segments, thetaStart, thetaLength)
+```
+
+
+## 材质
+
+### 基本材质（BasicMaterial）
+```
+THREE.MeshBasicMaterial(opt)
+```
+opt：
+
+ - visible：是否可见，默认为true
+ - side：渲染面片正面或是反面，默认为正面THREE.FrontSide，可设置为反面THREE.BackSide，或双面THREE.DoubleSide
+ - wireframe：是否渲染线而非面，默认为false color：十六进制RGB颜色，如红色表示为0xff0000
+ - map：使用纹理贴图
+
+### Lambert材质（MeshLambertMaterial）
+
+```
+Idiffuse = Kd * Id * cos(theta)
+```
+
+ - Idiffuse：漫反射光强
+ - Kd：物体表面的漫反射属性
+ - Id：光强
+ - theta：光的入射角弧度
+
+
+opt：
+
+ - color：用来表现材质对散射光的反射能力，也是最常用来设置材质颜色的属性
+ - ambient：对环境光的反射能力
+ - emissive：材质的自发光颜色
 
  
   [1]: http://pnz8aty4g.bkt.clouddn.com/orthographic-camera.jpg
